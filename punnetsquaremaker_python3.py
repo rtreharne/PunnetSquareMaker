@@ -108,35 +108,11 @@ print('The genes should be separated by spaces. For example, a valid genotype wo
 print('') 
 print('=====================================================================')
 print('')
-while True:
-	p1 = input("Please enter the genotype of the first parent: ").split(' ')
-	p2 = input("Please enter the gentype of the second parent: ").split(' ')
-	c1 = get_all_combinations(p1)
-	c2 = get_all_combinations(p2)
-	a = make_table(c1, c2)
-	latextable = print_table(a, c1, c2)
-	freqtable = print_genotype_frequencies(a)
-	print('')
-	option = input("Enter (S) to save your tables in a *.tex file, or any key to continue without saving.\n")
-	if option == "S":
-		now = datetime.datetime.now() # Date & time
-		name = '%s_table.tex' % (now.strftime("%Y-%m-%d_%H-%M-%S")) # Give a name with date
-		f = open(name, 'w') # Open the file once
-		f.write(headtex())
-		f.write(width(c1, c2))
-		for item in latextable:
-			f.write("%s" % item)
-		f.write(foottex())
-		f.write(freqhead())
-		for item in freqtable:
-			f.write("%s" % item)
-		f.write(foottex())
-		f.close()
-		print('') 
-		print('Your Latex file ' + name + ' is saved in your script repertory!\n')
-	action = input("Enter (A) to make another or any key to quit!\n")
-	if action == "A":
-		print('')
-		print("Again!\n")
-	else:	
-		quit()
+p1 = input("please enter the genotype of the first parent: ").split(' ')
+p2 = input("please enter the gentype of the second parent: ").split(' ')
+c1 = get_all_combinations(p1)
+c2 = get_all_combinations(p2)
+a = make_table(c1, c2)
+latextable = print_table(a, c1, c2)
+freqtable = print_genotype_frequencies(a)
+print('')
