@@ -1,3 +1,5 @@
+In the process of updating the original PunnetSquareMaker script to use conventional nomenclature for fly crosses. R. Treharne & H. Badmos 2019
+
 PunnettSquareMaker
 ============================
 
